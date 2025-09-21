@@ -12,14 +12,19 @@
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Navbar -->
-  <header class="fixed w-full z-10">
-    <nav class="container mx-auto flex justify-between items-center p-4 text-white">
+  <header id="navbar" class="fixed w-full z-20 transition duration-500">
+    <nav class="container mx-auto flex justify-between items-center py-6 px-4 text-white">
       <h1 class="text-2xl font-bold">Malou</h1>
       <ul class="flex space-x-6">
-        <li><a href="#accueil" class="hover:text-blue-400">Accueil</a></li>
-        <li><a href="#galerie" class="hover:text-blue-400">Galerie</a></li>
-        <li><a href="#apropos" class="hover:text-blue-400">À propos</a></li>
+        <li><a href="#work" class="hover:text-blue-400">Work</a></li>
+        <!-- <li><a href="#galerie" class="hover:text-blue-400">Galerie</a></li> -->
+        <li><a href="#theartist" class="hover:text-blue-400">The artist</a></li>
         <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        <li>
+          <a href="https://www.instagram.com/tonprofil" target="_blank" class="hover:text-pink-500">
+            📸 Instagram
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -30,26 +35,26 @@
       <div class="swiper-wrapper">
         <!-- Slide 1 -->
         <div class="swiper-slide bg-cover bg-center flex items-center justify-center" style="background-image: url('images/image-hero1.jpg');">
-          <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white">
+          <!-- <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white">
             <h2 class="text-4xl md:text-6xl font-bold mb-4">Bienvenue dans l’univers de Malou</h2>
             <p class="text-lg md:text-xl">Artiste visuel • Peinture • Illustration</p>
-          </div>
+          </div> -->
         </div>
 
         <!-- Slide 2 -->
         <div class="swiper-slide bg-cover bg-center flex items-center justify-center" style="background-image: url('images/image-hero2.jpg');">
-          <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white">
+          <!-- <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white">
             <h2 class="text-4xl md:text-6xl font-bold mb-4">Des couleurs et des émotions</h2>
             <p class="text-lg md:text-xl">Un voyage visuel unique</p>
-          </div>
+          </div> -->
         </div>
 
         <!-- Slide 3 -->
         <div class="swiper-slide bg-cover bg-center flex items-center justify-center" style="background-image: url('images/image-hero3.jpg');">
-          <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white">
+          <!-- <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white">
             <h2 class="text-4xl md:text-6xl font-bold mb-4">Entre abstraction et réalisme</h2>
             <p class="text-lg md:text-xl">Découvrez la galerie</p>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -57,8 +62,8 @@
       <div class="swiper-pagination"></div>
 
       <!-- Flèches -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <!-- <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
     </div>
   </section>
 
@@ -66,9 +71,9 @@
   <section id="galerie" class="container mx-auto py-20">
     <h2 class="text-3xl font-bold text-center mb-10">Galerie</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <img src="images/oeuvre1.jpg" alt="Oeuvre 1" class="rounded-xl shadow-lg">
-      <img src="images/oeuvre2.jpg" alt="Oeuvre 2" class="rounded-xl shadow-lg">
-      <img src="images/oeuvre3.jpg" alt="Oeuvre 3" class="rounded-xl shadow-lg">
+      <img src="images/oeuvre1.jpg" alt="Oeuvre 1" class="rounded-xl shadow-lg" loading="lazy">
+      <img src="images/oeuvre2.jpg" alt="Oeuvre 2" class="rounded-xl shadow-lg" loading="lazy">
+      <img src="images/oeuvre3.jpg" alt="Oeuvre 3" class="rounded-xl shadow-lg" loading="lazy">
       <!-- Ajoute d’autres images ici -->
     </div>
   </section>
@@ -98,31 +103,27 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white py-6 mt-10 shadow-inner">
-    <p class="text-center text-gray-600">&copy; 2025 Malou - Tous droits réservés</p>
+  <footer class="bg-black py-6 mt-10">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+      <!-- Instagram à gauche -->
+      <p class="mb-2 md:mb-0">
+        <a href="https://www.instagram.com/tonprofil" target="_blank" class="text-pink-500 hover:underline">
+          Suivez-moi sur Instagram 📸
+        </a>
+      </p>
+  
+      <!-- Copyright à droite -->
+      <p class="text-white text-right">
+        &copy; 2025 Malou
+      </p>
+    </div>
   </footer>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+ <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      effect: "fade",
-      speed: 1000,
-    });
-  </script>
+<!-- Ton JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
