@@ -19,6 +19,13 @@ const swiper = new Swiper('.swiper', {
   
   // Navbar scroll effect
   const navbar = document.getElementById('navbar');
+  // Navbar menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
   // Fonction pour appliquer la couleur
   function updateNavbar() {

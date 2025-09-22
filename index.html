@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artiste Vitrine</title>
+  <title>Malou</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Swiper CSS -->
@@ -11,22 +12,35 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Navbar -->
+   <!-- Navbar -->
   <header id="navbar" class="fixed w-full z-20 transition duration-500">
     <nav class="container mx-auto flex justify-between items-center py-6 px-4 text-white">
+      <!-- Logo -->
       <h1 class="text-2xl font-bold">Malou</h1>
-      <ul class="flex space-x-6">
+  
+      <!-- Bouton burger (visible seulement sur mobile) -->
+      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">
+        ☰
+      </button>
+  
+      <!-- Liens navbar -->
+      <ul id="menu" class="hidden md:flex space-x-6">
         <li><a href="#work" class="hover:text-blue-400">Work</a></li>
         <!-- <li><a href="#galerie" class="hover:text-blue-400">Galerie</a></li> -->
         <li><a href="#theartist" class="hover:text-blue-400">The artist</a></li>
         <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
-        <li>
-          <a href="https://www.instagram.com/malou_mna" target="_blank" class="hover:text-pink-500">
-            📸 Instagram
-          </a>
-        </li>
       </ul>
     </nav>
+  
+    <!-- Menu mobile (caché par défaut) -->
+    <div id="mobile-menu" class="hidden bg-black text-white md:hidden">
+      <ul class="flex flex-col space-y-4 p-6">
+        <li><a href="#accueil" class="hover:text-blue-400">Accueil</a></li>
+        <li><a href="#galerie" class="hover:text-blue-400">Galerie</a></li>
+        <li><a href="#apropos" class="hover:text-blue-400">À propos</a></li>
+        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </div>
   </header>
 
   <!-- Hero avec Swiper -->
