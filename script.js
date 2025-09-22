@@ -22,9 +22,18 @@ const swiper = new Swiper('.swiper', {
   // Navbar menu
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+  
+  // Ouvre/ferme quand on clique sur le bouton
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
+  });
+  
+  // Ferme le menu quand on clique sur un lien
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
   });
 
   // Fonction pour appliquer la couleur
