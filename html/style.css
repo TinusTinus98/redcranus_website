@@ -1,6 +1,6 @@
 /* Firefox */
-  html, body {
-    scroll-behavior: smooth;
-    scrollbar-color: #444444 #000000;
-    /* overflow: auto; */
-  }
+html, body {
+  scroll-behavior: smooth;
+  scrollbar-color: #444444 #000000;
+  /* overflow: auto; */
+}
