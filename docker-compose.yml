@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  malou_site:
+    build: .
+    container_name: redcranus_website
+    restart: unless-stopped
+    expose:
+      - "80"  # rend le port 80 visible pour NPM mais pas sur l'extérieur
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
