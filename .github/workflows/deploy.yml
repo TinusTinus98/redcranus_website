@@ -1,0 +1,31 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy_site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy site to VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "tinus_web/"
+          target: "/srv/tinus_web"
+
+      - name: Reload NPM (optional)
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            echo "Site copied. NPM sert de reverse proxy, pas besoin de redémarrer Docker."
