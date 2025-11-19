@@ -16,7 +16,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          key: ${{ secrets.VPS_SSH }}
           source: "."
           target: "/srv/redcranus_website"
 
@@ -25,7 +25,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          key: ${{ secrets.VPS_SSH }}
           script: |
             cd /srv/redcranus_website
             docker compose down
