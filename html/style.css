@@ -1,6 +1,26 @@
+
 /* Firefox */
 html, body {
   scroll-behavior: smooth;
   scrollbar-color: #444444 #000000;
   /* overflow: auto; */
+}
+
+/* Classe pour l'effet d'inversion */
+.navbar-blend-text {
+  /* Le cœur de l'effet : Inverser la couleur du texte par rapport au fond */
+  mix-blend-mode: difference;
+  
+  /* S'assurer que le texte est en blanc pur (ou noir pur) pour que l'effet soit visible */
+  color: white; 
+}
+
+/* style.css */
+
+/* ... autres styles ... */
+
+.image-zoom-shadow:hover {
+  /* Cette règle applique une ombre blanche autour des contours de l'image */
+  /* Ajustez les valeurs : décalage-x, décalage-y, rayon-flou, couleur */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
 }

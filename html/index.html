@@ -21,37 +21,35 @@
 <body class="bg-gray-50 text-gray-800">
 
    <!-- Navbar -->
-  <header id="navbar" class="fixed w-full z-20 transition duration-100">
-    <nav class="w-full flex justify-between py-8 px-10 text-white">
-      <a href="/index.html" class="hover:">
-      <h1 class="text-4xl font-bold">MÅŁØỤ</h1>
+
+
+ <header id="navbar" class="fixed w-full z-20">
+    <nav class="w-full flex justify-between py-5 px-10"> 
+      <a href="/html" class="hover:">
+      <h1 class="text-4xl font-bold navbar-blend-text">MÅŁØỤ</h1>
       </a>
   
-      <!-- Bouton burger (visible seulement sur mobile) -->
-      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
+      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none navbar-blend-text">☰</button>
   
-      <!-- Liens navbar -->
       <ul id="menu" class="hidden md:flex space-x-6">
-        <li><a href="#dessins" class="text-2xl hover:text-blue-400">Dessins</a></li>
-        <li><a href="#poems" class="text-2xl hover:text-blue-400">Poèmes</a></li>
-        <li><a href="#vitraux" class="text-2xl hover:text-blue-400">Vitraux</a></li>
+        <li><a href="#dessins" class="text-2xl hover:text-blue-400 navbar-blend-text">Dessins</a></li>
+        <li><a href="#poems" class="text-2xl hover:text-blue-400 navbar-blend-text">Poèmes</a></li>
+        <li><a href="#vitraux" class="text-2xl hover:text-blue-400 navbar-blend-text">Vitraux</a></li>
         <li> </li>
         <li>
           <p class="mb-2 md:mb-0">
-            <a href="https://www.instagram.com/malou_mna" target="_blank" class="hover:text-pink-400">
+            <a href="https://www.instagram.com/malou_mna" target="_blank" class="hover:text-pink-400 navbar-blend-text">
               <svg width="31" height="32" viewBox="0 0 31 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.2001 15.8155C21.2001 12.4105 18.488 9.54048 15.0001 9.54048C11.5178 9.54048 8.80005 12.3034 8.80005 15.8155C8.80005 19.2205 11.5121 22.0905 15.0001 22.0905C18.3767 22.0905 21.2001 19.3333 21.2001 15.8155ZM7.80005 15.8155C7.80005 11.8259 10.9865 8.51416 15.0001 8.51416C19.0178 8.51416 22.2001 11.7289 22.2001 15.8155C22.2001 19.8008 18.9178 23.1168 15.0001 23.1168C11.0781 23.1168 7.80005 19.8978 7.80005 15.8155Z" fill="currentColor" stroke="currentColor"/>
                 <path d="M24.2999 7.7104C24.2999 8.44764 23.7118 9.03409 22.9999 9.03409C22.2881 9.03409 21.7 8.44764 21.7 7.7104C21.7 6.97317 22.2881 6.38672 22.9999 6.38672C23.7118 6.38672 24.2999 6.97317 24.2999 7.7104Z" fill="currentColor" stroke="currentColor"/>
                 <path d="M7.58366 29.5876L7.59183 29.5879H7.59999H22.4C25.7823 29.5879 28.5 26.825 28.5 23.4142V8.31817C28.5 4.90742 25.7823 2.14448 22.4 2.14448H7.59999C4.21771 2.14448 1.5 4.90742 1.5 8.31817V23.3129C1.5 26.7269 4.21743 29.4776 7.58366 29.5876ZM7.59999 1.11816H22.4C26.3138 1.11816 29.5031 4.33015 29.6 8.32416V23.3129C29.6 27.2982 26.4177 30.5129 22.5 30.5129H7.59999C3.678 30.5129 0.5 27.2939 0.5 23.4142V8.31817C0.5 4.33286 3.68228 1.11816 7.59999 1.11816Z" fill="currentColor" stroke="currentColor"/>
                 </svg>
-                
             </a>
           </p>
         </li>
       </ul>
     </nav>
   
-    <!-- Menu mobile (caché par défaut) -->
     <div id="mobile-menu" class="hidden bg-black text-white md:hidden">
       <ul class="flex flex-col space-y-4 p-6">
         <li><a href="/dessins.html" class="text-2xl hover:text-blue-400">Dessins</a></li>
@@ -74,54 +72,128 @@
         <div class="swiper-slide bg-cover bg-center flex items-center justify-center" style="background-image: url('images/vitrail_001.png');"></div>
       </div>
 
-      <!-- Pagination -->
-      <div class="swiper-pagination"></div>
-
     </div>
   </section>
 
-  <!-- Galerie -->
-  <section id="galerie" class="container mx-auto py-20">
-    <h2 class="text-3xl font-bold text-center mb-10">Galerie</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <img src="images/oeuvre1.jpg" alt="Oeuvre 1" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre2.jpg" alt="Oeuvre 2" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre3.jpg" alt="Oeuvre 3" class="rounded-xl shadow-lg" loading="lazy">
-      <!-- Ajoute d’autres images ici -->
+<section id="parallax-image-section" class="relative h-[100vh] md:h-[230vh] overflow-hidden flex items-center justify-center bg-gray-950">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <img 
+        src="images/shibari1-Photoroom.png"  alt="Malou l'artiste en mouvement" 
+        id="parallax-image" 
+        class="w-4/5 md:w-3/5 lg:w-2/5 h-auto object-contain absolute top-0 transform-gpu" 
+        style="transform: translateY(0px);"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="absolute inset-0 flex items-start justify-center">
+      
+      <img 
+        src="images/shibari6-Photoroom.png" 
+        alt="Oeuvre 1 en mouvement" 
+        id="parallax-image-left" 
+        class="w-1/2 md:w-1/3 h-auto object-contain absolute top-0 left-0 md:left-10 transform-gpu" 
+        style="transform: translateY(0px);"
+        loading="lazy"
+      >
+
+      <img 
+        src="images/shibari5-Photoroom.png" 
+        alt="Oeuvre 2 en mouvement" 
+        id="parallax-image-right" 
+        class="w-1/2 md:w-1/3 h-auto object-contain absolute bottom-0 right-0 md:right-10 transform-gpu" 
+        style="transform: translateY(0px);"
+        loading="lazy"
+      >
+
+    </div>
+    
+    <div class="relative z-10 text-white text-center p-8">
+        <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
+            L'Art en Mouvement
+        </h2>
+        <p class="text-xl md:text-2xl text-gray-200">
+            Découvrez la profondeur et l'énergie de chaque œuvre.
+        </p>
     </div>
   </section>
+
+
+
 
   <!-- Dessins -->
   <section id="dessins" class="container mx-auto py-20">
-    <h2 class="text-3xl font-bold text-center mb-10">Galerie</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <img src="images/oeuvre1.jpg" alt="Oeuvre 1" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre2.jpg" alt="Oeuvre 2" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre3.jpg" alt="Oeuvre 3" class="rounded-xl shadow-lg" loading="lazy">
-      <!-- Ajoute d’autres images ici -->
-    </div>
+    <h2 class="text-3xl font-bold text-center mb-10">Dessins</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre1.png" alt="Dessin/Œuvre 1" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        </div>
+  </div>
+
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre2.jpg" alt="Dessin/Œuvre 2" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-pink-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+  </div>
+
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre3.png" alt="Dessin/Œuvre 3" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+  </div>
+  
+  </div>
   </section>
 
   <!-- Dessins -->
   <section id="poems" class="container mx-auto py-20">
-    <h2 class="text-3xl font-bold text-center mb-10">Galerie</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <img src="images/oeuvre1.jpg" alt="Oeuvre 1" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre2.jpg" alt="Oeuvre 2" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre3.jpg" alt="Oeuvre 3" class="rounded-xl shadow-lg" loading="lazy">
-      <!-- Ajoute d’autres images ici -->
-    </div>
+    <h2 class="text-3xl font-bold text-center mb-10">Poèmes</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre1.png" alt="Dessin/Œuvre 1" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        </div>
+  </div>
+
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre2.jpg" alt="Dessin/Œuvre 2" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-pink-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+  </div>
+
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre3.png" alt="Dessin/Œuvre 3" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+  </div>
+  
+  </div>
   </section>
 
   <!-- Dessins -->
   <section id="vitraux" class="container mx-auto py-20">
-    <h2 class="text-3xl font-bold text-center mb-10">Galerie</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <img src="images/oeuvre1.jpg" alt="Oeuvre 1" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre2.jpg" alt="Oeuvre 2" class="rounded-xl shadow-lg" loading="lazy">
-      <img src="images/oeuvre3.jpg" alt="Oeuvre 3" class="rounded-xl shadow-lg" loading="lazy">
-      <!-- Ajoute d’autres images ici -->
-    </div>
+    <h2 class="text-3xl font-bold text-center mb-10">Vitraux</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre1.png" alt="Dessin/Œuvre 1" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+        </div>
+  </div>
+
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre2.jpg" alt="Dessin/Œuvre 2" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-pink-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+  </div>
+
+  <div class="group relative overflow-hidden rounded-xl shadow-xl transform hover:scale-[1.02] transition duration-300 ease-in-out">
+    <img src="images/oeuvre3.png" alt="Dessin/Œuvre 3" class="w-full h-80 object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-yellow-500 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none"></div>
+  </div>
+  
+  </div>
   </section>
 
   <!-- À propos -->
@@ -135,22 +207,26 @@
     </div>
   </section>
 
-  <!-- Footer ----------------------------------------------------------------------------------------------------------->
 
-  <footer class="bg-black py-14 px-14">
-    <div class="flex justify-between">
-      <!-- Instagram à gauche -->
-      <p class="md:mb-8">
-        <a href="https://www.instagram.com/malou_mna" target="_blank" class="text-white hover:text-pink-400">
-          <svg width="31" height="32" viewBox="0 0 31 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.2001 15.8155C21.2001 12.4105 18.488 9.54048 15.0001 9.54048C11.5178 9.54048 8.80005 12.3034 8.80005 15.8155C8.80005 19.2205 11.5121 22.0905 15.0001 22.0905C18.3767 22.0905 21.2001 19.3333 21.2001 15.8155ZM7.80005 15.8155C7.80005 11.8259 10.9865 8.51416 15.0001 8.51416C19.0178 8.51416 22.2001 11.7289 22.2001 15.8155C22.2001 19.8008 18.9178 23.1168 15.0001 23.1168C11.0781 23.1168 7.80005 19.8978 7.80005 15.8155Z" fill="currentColor" stroke="currentColor"/>
-            <path d="M24.2999 7.7104C24.2999 8.44764 23.7118 9.03409 22.9999 9.03409C22.2881 9.03409 21.7 8.44764 21.7 7.7104C21.7 6.97317 22.2881 6.38672 22.9999 6.38672C23.7118 6.38672 24.2999 6.97317 24.2999 7.7104Z" fill="currentColor" stroke="currentColor"/>
-            <path d="M7.58366 29.5876L7.59183 29.5879H7.59999H22.4C25.7823 29.5879 28.5 26.825 28.5 23.4142V8.31817C28.5 4.90742 25.7823 2.14448 22.4 2.14448H7.59999C4.21771 2.14448 1.5 4.90742 1.5 8.31817V23.3129C1.5 26.7269 4.21743 29.4776 7.58366 29.5876ZM7.59999 1.11816H22.4C26.3138 1.11816 29.5031 4.33015 29.6 8.32416V23.3129C29.6 27.2982 26.4177 30.5129 22.5 30.5129H7.59999C3.678 30.5129 0.5 27.2939 0.5 23.4142V8.31817C0.5 4.33286 3.68228 1.11816 7.59999 1.11816Z" fill="currentColor" stroke="currentColor"/>
-            </svg>
-        </a>
-      </p>
-    </div>
-  </footer>
+
+
+<section id="mise-en-avant" class="bg-gray-950 h-[100vh] md:h-[65vh] flex items-center justify-center">
+    <div class="container mx-auto max-w-4xl text-center">
+      
+     <div class="group relative inline-block cursor-pointer">
+        <img 
+            src="images/logo_tete_malou_detoure.png" 
+            alt="Œuvre mise en avant" 
+            class="max-w-xl mx-auto object-cover transition duration-500 ease-in-out transform group-hover:scale-105 image-zoom-shadow" 
+            loading="lazy"
+        >
+     </div>
+        </div>
+</section>
+
+
+
+
 
  <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
