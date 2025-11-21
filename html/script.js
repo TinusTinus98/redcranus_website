@@ -93,3 +93,65 @@ window.addEventListener('scroll', updateParallaxImage);
 // Appeler une première fois au chargement 
 updateParallaxImage();
 
+// ----------------------------------------------------------------
+// --- EFFET ETOILES CONTINU (Mise en avant) ---
+// ----------------------------------------------------------------
+
+const sparkleTrigger = document.getElementById('sparkle-trigger');
+let sparkleInterval; // Variable pour stocker le chrono
+
+if (sparkleTrigger) {
+    // 1. Quand la souris ENTRE : On démarre la boucle
+    sparkleTrigger.addEventListener('mouseenter', () => {
+        
+        // On lance une petite salve tout de suite pour pas attendre
+        createStars(5); 
+        
+        // On configure l'intervalle : créer 3 étoiles toutes les 50ms
+        // Tu peux changer '50' pour accélérer ou ralentir la cadence
+        sparkleInterval = setInterval(() => {
+            createStars(3); 
+        }, 50);
+    });
+
+    // 2. Quand la souris SORT : On arrête tout
+    sparkleTrigger.addEventListener('mouseleave', () => {
+        clearInterval(sparkleInterval);
+    });
+}
+
+function createStars(amount) {
+    const container = document.getElementById('sparkle-trigger');
+    
+    for (let i = 0; i < amount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star', 'animate-star');
+
+        // --- Configuration Aléatoire ---
+        
+        const angle = Math.random() * Math.PI * 2;
+        
+        // Distance : on garde ta distance "derrière l'image" (100 à 250px)
+        const distance = 200 + Math.random() * 220;
+
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+
+        star.style.setProperty('--tx', `${tx}px`);
+        star.style.setProperty('--ty', `${ty}px`);
+
+        const size = 15 + Math.random() * 8;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+
+        // Pas besoin de délai ici car l'intervalle gère le rythme
+        star.style.animationDelay = '0s'; 
+
+        container.appendChild(star);
+
+        // Nettoyage
+        setTimeout(() => {
+            star.remove();
+        }, 1000);
+    }
+}

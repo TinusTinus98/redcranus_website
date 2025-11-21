@@ -15,12 +15,86 @@ html, body {
   color: white; 
 }
 
-/* style.css */
 
-/* ... autres styles ... */
+/* --- SHIBARIS --- */
+
+
+
+/* --- Halo Spécifique aux Images de Parallaxe (Bords Adoucis) --- */
+
+.halo-parallax {
+  /* On combine les filtres sur la MÊME LIGNE, séparés par un espace */
+  /* 'blur(0.5px)' est l'ajustement pour adoucir le contour */
+  filter: drop-shadow(0 0 5px rgba(50, 50, 50, 1.2)); 
+  
+  /* On s'assure que la transition est fluide */
+  transition: filter 0.1s ease-in-out; 
+}
+
+/* --- ETOILES MAGIQUES --- */
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  
+  /* Forme d'étoile à 4 branches */
+  clip-path: polygon(50% 0%, 61% 35%, 100% 50%, 61% 65%, 50% 100%, 39% 65%, 0% 50%, 39% 35%);
+  
+  /* --- MODIFICATION ICI --- */
+  z-index: 10; /* Avant c'était 50. On met 1 pour que ce soit DERRIÈRE l'image */
+  
+  pointer-events: none; 
+  opacity: 50;
+}
+
+/* L'animation qui utilise des variables envoyées par le JS (--tx, --ty) */
+@keyframes sparkle-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 10;
+  }
+  100% {
+    /* On va vers les coordonnées calculées par le JS */
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.2) rotate(180deg);
+    opacity: 0; /* On disparait à la fin */
+  }
+}
+
+.animate-star {
+  animation: sparkle-burst 1.3s ease-out forwards;
+}
+
+
+/* TETE A LA FIN */
+
+.image-zoom-shadow {
+  /* Ombres de base, toujours visibles mais discrètes */
+  /* Ici, j'ai mis 5px de flou et une opacité de 0.3 (30%) */
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+  /* Ajoute une transition pour que le changement d'ombre soit doux */
+  transition: filter 0.3s ease-in-out; 
+}
 
 .image-zoom-shadow:hover {
-  /* Cette règle applique une ombre blanche autour des contours de l'image */
-  /* Ajustez les valeurs : décalage-x, décalage-y, rayon-flou, couleur */
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  /* Ombres au survol, plus intenses */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+/* --- Animation de "Respiration" (Pulse) --- */
+
+@keyframes gentle-pulse {
+  0% { transform: scale(0.99); }
+  50% { transform: scale(1.01); } /* Zoom léger (1.04 = 104%) */
+  100% { transform: scale(0.99); }
+}
+
+/* On applique cette animation au survol */
+.hover-pulse {
+  /* '2s' c'est la durée d'un cycle (zoom in + zoom out). 
+     Change ce chiffre pour battre plus ou moins vite */
+  animation: gentle-pulse 5s ease-in-out infinite;
 }
